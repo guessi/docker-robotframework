@@ -16,7 +16,7 @@ RUN apt update                                                             && \
 ADD requirements.txt /opt/requirements.txt
 
 # workaround for python-requests
-RUN R_VERSION=$(awk -F '=' '/^requests/{print$3}' /robot/requirements.txt) && \
+RUN R_VERSION=$(awk -F '=' '/^requests/{print$3}' /opt/requirements.txt)   && \
     pip install requests==${R_VERSION}                                     && \
     pip install -r /opt/requirements.txt
 
