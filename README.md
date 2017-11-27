@@ -1,37 +1,44 @@
 # Dockerized Robotframework Automation Test
 
-### Test with Docker
+[![Docker Stars](https://img.shields.io/docker/stars/guessi/docker-robotframework.svg)](https://hub.docker.com/r/guessi/docker-robotframework/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/guessi/docker-robotframework.svg)](https://hub.docker.com/r/guessi/docker-robotframework/)
+[![Docker Automated](https://img.shields.io/docker/automated/guessi/docker-robotframework.svg)](https://hub.docker.com/r/guessi/docker-robotframework/)
 
-build docker image
 
-    $ docker build -t robotfw .
+## Integrated Items
 
-run robotframework-cli via Docker
+* Robotframework
+* PhantomJS
+* Selenium
+* AWS CLI
+
+
+### Usage
+
+run robotframework-cli with customized scripts inside Docker
 
     $ docker run --rm                                  \
         -v $(pwd)/path/to/robot-scripts:/robot-scripts \
-        -it robotfw                                    \
-          robot --help
+        -it guessi/docker-robotframework               \
+          robot -i mytag /robot-scripts
 
-run robotframework-cli with customized robot scripts inside Docker
+execute phantomjs with customized scripts inside Docker
 
     $ docker run --rm                                  \
         -v $(pwd)/path/to/robot-scripts:/robot-scripts \
-        -it robotfw                                    \
-          robot /robot-scripts
+        -it guessi/docker-robotframework               \
+          phantomjs
 
-to execute AWS related command
+execute awscli command inside Docker
 
     $ docker run --rm                                  \
-        -e AWS_REGION=xxxxx                            \
-        -e AWS_ACCESS_KEY_ID=xxxxxx                    \
-        -e AWS_SECRET_ACCESS_KEY=xxxxx                 \
         -v $(pwd)/path/to/robot-scripts:/robot-scripts \
-        -it robotfw                                    \
-          aws help
+        -it guessi/docker-robotframework               \
+          aws --help
 
 
 ### Documentation
 
-    * [Robot Framework](http://robotframework.org/#documentation)
-    * [Selenium](http://www.seleniumhq.org/)
+* [Robot Framework](http://robotframework.org/#documentation)
+* [Selenium](http://www.seleniumhq.org/)
+* [PhantomJS](http://phantomjs.org/)
