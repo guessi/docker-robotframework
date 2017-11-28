@@ -42,3 +42,13 @@ execute awscli command inside Docker
 * [Robot Framework](http://robotframework.org/#documentation)
 * [Selenium](http://www.seleniumhq.org/)
 * [PhantomJS](http://phantomjs.org/)
+
+
+### Reference
+
+* [Screenshot of Multilingual Support](https://imgur.com/a/MrSla)
+
+
+### Known Issues
+
+* [Maldivian Language](https://en.wikipedia.org/wiki/Maldivian_language) may not be displayed correctly

@@ -24,6 +24,10 @@ RUN curl -fssL ${PHANTOMJS_SOURCE} > ${PHANTOMJS_FILENAME}                 && \
     ln -s /usr/local/share/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/bin && \
     rm -vf /${PHANTOMJS_FILENAME}
 
+# multilingual support for phantomjs display
+ADD fonts.txt /opt/
+RUN apt install -y $(cat /opt/fonts.txt)
+
 RUN mkdir -p /robot-scripts
 
 VOLUME ["/robot-scripts"]
