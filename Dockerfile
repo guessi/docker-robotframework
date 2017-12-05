@@ -31,3 +31,5 @@ RUN apt install -y $(cat /opt/fonts.txt)
 RUN mkdir -p /robot-scripts
 
 VOLUME ["/robot-scripts"]
+
+CMD ["/usr/local/bin/robot"]
