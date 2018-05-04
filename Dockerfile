@@ -1,4 +1,4 @@
-FROM python:2.7-slim-jessie
+FROM python:2.7-slim-stretch
 
 ENV PHANTOMJS_FILENAME phantomjs-2.1.1-linux-x86_64.tar.bz2
 ENV PHANTOMJS_SOURCE https://bitbucket.org/ariya/phantomjs/downloads/${PHANTOMJS_FILENAME}
