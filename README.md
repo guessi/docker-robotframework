@@ -17,22 +17,20 @@
 
 run robotframework-cli with customized scripts inside Docker
 
-    $ docker run --rm                                  \
-        -v $(pwd)/path/to/robot-scripts:/robot-scripts \
+    $ docker run --rm --privileged                     \
+        -v $(pwd)/robot-scripts:/robot-scripts:rw      \
         -it guessi/docker-robotframework               \
           robot -i mytag /robot-scripts
 
 execute phantomjs with customized scripts inside Docker
 
-    $ docker run --rm                                  \
-        -v $(pwd)/path/to/robot-scripts:/robot-scripts \
+    $ docker run --rm --privileged                     \
         -it guessi/docker-robotframework               \
           phantomjs
 
 execute awscli command inside Docker
 
-    $ docker run --rm                                  \
-        -v $(pwd)/path/to/robot-scripts:/robot-scripts \
+    $ docker run --rm --privileged                     \
         -it guessi/docker-robotframework               \
           aws --help
 
