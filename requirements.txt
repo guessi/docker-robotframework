@@ -1,29 +1,8 @@
-# base
-PyYAML
-Pygments
-SecretStorage
-configobj
-httplib2
-jsonpatch
-pycrypto
-pycurl
-pykafka
-requests
-simplejson
-ssh-import-id
-urllib3
-zope.interface
+awscli>=1.19.27,<2.0.0
+boto3>=1.17.27,<2.0.0
 
-# aws
-awscli>=1.16.147,<2.0.0
-boto3>=1.9.137,<2.0.0
-
-# robot
-robotframework==3.1.1
-robotframework-excellibrary==0.0.2
-robotframework-requests==0.5.0
-robotframework-ride==1.5.2.1
-robotframework-selenium2library==3.0.0
-robotframework-seleniumlibrary==3.3.1
-robotframework-sshlibrary==3.3.0
+robotframework==3.2.2
+robotframework-requests==0.8.1
+robotframework-seleniumlibrary==5.1.1
+robotframework-sshlibrary==3.6.0
 selenium==3.141.0

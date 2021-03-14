@@ -18,15 +18,18 @@
 run robotframework-cli with customized scripts inside Docker
 
     $ docker run --rm --privileged                     \
-        -v $(pwd)/robot-scripts:/robot-scripts:rw      \
+        -v $(pwd)/workdir:/workdir:rw                  \
         -it guessi/docker-robotframework               \
-          robot -i mytag /robot-scripts
+          robot -i mytag /workdir
 
 execute phantomjs with customized scripts inside Docker
 
     $ docker run --rm --privileged                     \
+        -v $(pwd)/workdir:/workdir:rw                  \
+        -v $(pwd)/tests:/phantomjs:ro                  \
         -it guessi/docker-robotframework               \
-          phantomjs
+          phantomjs                                    \
+            /phantomjs/phantomjs-languages.js
 
 execute awscli command inside Docker
 

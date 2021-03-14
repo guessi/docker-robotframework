@@ -1,4 +1,4 @@
-FROM python:2.7-slim-stretch as BASE
+FROM python:3.9-slim-buster as builder-base
 
 RUN apt update                                                             && \
     apt install -y --no-install-recommends                                    \
@@ -10,22 +10,19 @@ RUN apt update                                                             && \
         libssl-dev
 
 ADD requirements.txt /opt/
-RUN pip install requests                                                   && \
-    pip install -r /opt/requirements.txt
-
-RUN mkdir -p /robot-scripts
+RUN pip3 install -r /opt/requirements.txt
 
 VOLUME ["/robot-scripts"]
 
 CMD ["/usr/local/bin/robot"]
 
-#
-
-FROM BASE
+FROM builder-base
 
 ENV PHANTOMJS_FILENAME phantomjs-2.1.1-linux-x86_64.tar.bz2
 ENV PHANTOMJS_SOURCE https://bitbucket.org/ariya/phantomjs/downloads/${PHANTOMJS_FILENAME}
 ENV PHANTOMJS_CHKSUM "86dd9a4bf4aee45f1a84c9f61cf1947c1d6dce9b9e8d2a907105da7852460d2f"
+
+ENV OPENSSL_CONF /etc/ssl/
 
 RUN apt update                                                             && \
     apt install -y --no-install-recommends                                    \
