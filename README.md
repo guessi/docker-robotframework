@@ -1,9 +1,5 @@
 # Dockerized Robotframework Automation Test
 
-[![Docker Stars](https://img.shields.io/docker/stars/guessi/docker-robotframework.svg)](https://hub.docker.com/r/guessi/docker-robotframework/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/guessi/docker-robotframework.svg)](https://hub.docker.com/r/guessi/docker-robotframework/)
-[![Docker Automated](https://img.shields.io/docker/automated/guessi/docker-robotframework.svg)](https://hub.docker.com/r/guessi/docker-robotframework/)
-
 
 ## Integrated Items
 
