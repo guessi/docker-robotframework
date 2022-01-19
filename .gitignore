@@ -1,2 +1,5 @@
 workdir/*
 !workdir/.gitkeep
+
+.DS_Store
+*.pyc
