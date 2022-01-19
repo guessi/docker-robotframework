@@ -1,4 +1,4 @@
-FROM python:3.9-slim-buster as builder-base
+FROM python:3.10-slim-bullseye as builder-base
 
 RUN apt update                                                             && \
     apt install -y --no-install-recommends                                    \
