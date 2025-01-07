@@ -1,20 +1,17 @@
-FROM python:3.10-slim-bullseye as builder-base
+FROM public.ecr.aws/docker/library/python:3.13-slim-bookworm AS builder-base
 
 RUN apt update                                                             && \
     apt install -y --no-install-recommends                                    \
         bzip2                                                                 \
         curl                                                                  \
         gcc                                                                   \
+        groff                                                                 \
         libcurl4-gnutls-dev                                                   \
         libgnutls28-dev                                                       \
         libssl-dev
 
 ADD requirements.txt /opt/
 RUN pip3 install -r /opt/requirements.txt
-
-VOLUME ["/robot-scripts"]
-
-CMD ["/usr/local/bin/robot"]
 
 FROM builder-base
 

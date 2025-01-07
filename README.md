@@ -21,6 +21,7 @@ run robotframework-cli with customized scripts inside Docker
 execute phantomjs with customized scripts inside Docker
 
     $ docker run --rm --privileged                     \
+        --entrypoint /bin/bash                         \
         -v $(pwd)/workdir:/workdir:rw                  \
         -v $(pwd)/tests:/phantomjs:ro                  \
         -it guessi/docker-robotframework               \
@@ -30,6 +31,7 @@ execute phantomjs with customized scripts inside Docker
 execute awscli command inside Docker
 
     $ docker run --rm --privileged                     \
+        --entrypoint /bin/bash                         \
         -it guessi/docker-robotframework               \
           aws --help
 
